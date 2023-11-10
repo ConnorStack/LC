@@ -2,18 +2,13 @@ package me.practice.Sorting;
 
 public class SelectSort {
 
-
-    public int add(int a, int b){
-        return a + b;
-    }
-
-    public static int[] sort(int[] arr){
+    public static int[] sort(int[] arr) {
         int min_index = 0, temp = 0;
 
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             min_index = i;
-            for(int j = i+1; j < arr.length; j++){
-                if(arr[j] < arr[min_index]){
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[min_index]) {
                     min_index = j;
                 }
             }
@@ -23,6 +18,4 @@ public class SelectSort {
         }
         return arr;
     }
-    
-    
 }
