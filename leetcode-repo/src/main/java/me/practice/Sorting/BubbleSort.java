@@ -1,6 +1,7 @@
 package me.practice.Sorting;
 
 public class BubbleSort {
+    
     public static int[] sort(int[] arr){
         boolean hasSwapped = true;
         int temp;
