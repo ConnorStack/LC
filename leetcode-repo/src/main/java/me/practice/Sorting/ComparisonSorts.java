@@ -40,4 +40,19 @@ public class ComparisonSorts {
 
         return arr;
     }
+
+    public static int[] insertionSort(int[] arr){
+        for(int i = 1; i < arr.length; i++){
+            int currentIndex = i;
+            int temp;
+
+            while(currentIndex > 0 && arr[currentIndex - 1] > arr[currentIndex]){
+                temp = arr[currentIndex - 1];
+                arr[currentIndex - 1] = arr[currentIndex];
+                arr[currentIndex] = temp;
+                currentIndex -= 1;
+            }
+        }
+        return arr;
+    }
 }
