@@ -51,6 +51,11 @@ public class ComparisonSortsTest {
     public void testHeapSortWithRandomInput() {
         int[] arr = ComparisonSorts.heapSort(randArraySize5);
         assertArrayEquals(expectedArrSize5, arr);
-
+    }
+    @Test
+    public void testHeapSortWithNonIncreasingInput()
+    {
+        int[] arr = ComparisonSorts.heapSort(nonIncreadingSize5);
+        assertArrayEquals(expectedArrSize5, arr);
     }
 }
