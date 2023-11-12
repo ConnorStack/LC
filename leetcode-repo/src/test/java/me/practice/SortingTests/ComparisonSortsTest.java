@@ -24,7 +24,7 @@ public class ComparisonSortsTest {
 
     @Test
     public void testBubbleSortWithNonIncreasingInput() {
-        int[] arr = ComparisonSorts.bubbleSort(nonIncreadingSize5);
+        int[] arr = ComparisonSorts.bubbleSort(nonIncreasingSize5);
         assertArrayEquals(expectedArrSize5, arr);
     }
 
@@ -36,7 +36,7 @@ public class ComparisonSortsTest {
 
         @Test
     public void testSelectSortIncreasingInput() {
-        int [] arr = ComparisonSorts.selectSort(nonIncreadingSize5);
+        int [] arr = ComparisonSorts.selectSort(nonIncreasingSize5);
         assertArrayEquals(expectedArrSize5, arr);
     }
 
@@ -48,7 +48,7 @@ public class ComparisonSortsTest {
 
         @Test
     public void testInsertionSortWithNonIncreasingInput() {
-        int[] arr = ComparisonSorts.insertionSort(nonIncreadingSize5);
+        int[] arr = ComparisonSorts.insertionSort(nonIncreasingSize5);
         assertArrayEquals(expectedArrSize5, arr);
     }
 
@@ -60,7 +60,7 @@ public class ComparisonSortsTest {
     @Test
     public void testHeapSortWithNonIncreasingInput()
     {
-        int[] arr = ComparisonSorts.heapSort(nonIncreadingSize5);
+        int[] arr = ComparisonSorts.heapSort(nonIncreasingSize5);
         assertArrayEquals(expectedArrSize5, arr);
     }
 }
