@@ -14,9 +14,10 @@ public class SortingScratchClassTest {
     public int[] randArraySize10 = { 5, 1, 10, 6, 4, 7, 2, 9, 3, 8 };
 
     public int[] nonIncreadingSize5 = { 5, 4, 3, 2, 1 };
+    public int[] nonIncreasingSize10 = {10, 9,8, 7, 6, 5, 4, 3, 2, 1};
     @Test
     public void testHeapSortPrac(){
         int arr[] = SortingScratchClass.heapSortPrac(randArraySize10);
-        assertArrayEquals(arr, expectedArrSize10);
+        assertArrayEquals(expectedArrSize10, arr);
     }
 }
