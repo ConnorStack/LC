@@ -21,4 +21,10 @@ public class NonComparisonSortsTest {
         int arr[] = NonComparisonSorts.basicCountSort(randArraySize5);
         assertArrayEquals(expectedArrSize5, arr);
     }
+
+    @Test
+    public void testExtendedCountSort(){
+        int arr[] = NonComparisonSorts.extendedCountSort(randArraySize5);
+        assertArrayEquals(expectedArrSize5, arr);
+    }
 }
