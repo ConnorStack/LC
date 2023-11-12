@@ -44,4 +44,52 @@ public class NonComparisonSorts {
         }
         return arr;
     }
+
+    public static int[] countSortPractice(int[] arr)
+    {
+        int[] sortedArr = new int[arr.length];
+        int k = Arrays.stream(arr).max().getAsInt();
+
+        int[] counts = new int[k + 1];
+        int[] startingIndex = new int[k + 1];
+
+        for(int element : arr){
+            counts[element]+= 1;
+        }
+
+        // int accum = 0;
+        // for (int i = 0; i < counts.length; i++) {
+        //     accum += counts[i];
+        //     startingIndex[i] = accum;
+        // }
+
+        int accum = 0;
+        for(int i = 0; i < counts.length; i++){
+            startingIndex[i] = accum;
+            accum += counts[i];
+        }
+
+        // for (int i = 0; i < startingIndex.length - 1; i++) {
+        //     // int temp = startingIndex[i];
+        //     startingIndex[i] = startingIndex[i+1];
+        //     // startingIndex[i+1] = temp;
+        // }
+
+        // for (int i = startingIndex.length - 1; i > 0; i--) {
+        //     startingIndex[i] = startingIndex[i-1];
+        // }
+
+        // startingIndex[0]=0;
+
+        for (int i = 0; i < sortedArr.length; i++) {
+            //{0, 0, 4, 2, 4, 5, 2, 1, 0};
+            int pulledValue = arr[i];
+            int element = startingIndex[pulledValue];
+            startingIndex[pulledValue]++;
+            sortedArr[element] = pulledValue;
+        }
+
+
+        return sortedArr;
+    }
 }
