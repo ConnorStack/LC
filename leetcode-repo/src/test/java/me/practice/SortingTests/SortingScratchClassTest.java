@@ -22,6 +22,16 @@ public class SortingScratchClassTest {
     public int[] nonIncreasingSize10 = {10, 9,8, 7, 6, 5, 4, 3, 2, 1};
     
     @Test
+    public void testInsertionSortPracWithSize10Input(){
+        assertArrayEquals(expectedArrSize10, SortingScratchClass.insertionSortPrac(randArraySize10));
+    }
+
+    @Test
+    public void testInsertionSortPracWithSize5Input(){
+        assertArrayEquals(expectedArrSize5, SortingScratchClass.insertionSortPrac(expectedArrSize5));
+    }
+
+    @Test
     public void testHeapSortPrac(){
         assertArrayEquals(expectedArrSize10, SortingScratchClass.heapSortPrac(randArraySize10));
     }
