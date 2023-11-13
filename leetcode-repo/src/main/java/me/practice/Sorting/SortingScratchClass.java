@@ -78,9 +78,39 @@ public class SortingScratchClass {
             unsortedValue = unsortedArr[i];
             insertIndex = startingIndicies[unsortedValue];
             sortedArr[insertIndex] = unsortedValue;
+
             startingIndicies[unsortedValue]++;
         }
         
+        return sortedArr;
+    }
+
+    public static int[] countSortPractice(int[] arr)
+    {
+        int[] sortedArr = new int[arr.length];
+        int k = Arrays.stream(arr).max().getAsInt();
+
+        int[] counts = new int[k + 1];
+        int[] startingIndex = new int[k + 1];
+
+        for(int element : arr){
+            counts[element]+= 1;
+        }
+
+        int accum = 0;
+        for(int i = 0; i < counts.length; i++){
+            startingIndex[i] = accum;
+            accum += counts[i];
+        }
+
+        for (int i = 0; i < sortedArr.length; i++) {
+            //{0, 0, 4, 2, 4, 5, 2, 1, 0};
+            int pulledValue = arr[i];
+            int element = startingIndex[pulledValue];
+            startingIndex[pulledValue]++;
+            sortedArr[element] = pulledValue;
+        }
+
         return sortedArr;
     }
 }

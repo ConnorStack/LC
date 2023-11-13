@@ -12,9 +12,11 @@ public class NonComparisonSortsTest {
 
     public int[] randCountArray = {0, 0, 4, 2, 4, 5, 2, 1, 0};
     public int[] expectedCountArray = {0, 0, 0, 1, 2, 2, 4, 4, 5};
-
     public int[] randCountArray2 = { 9, 3, 8, 3, 5, 4, 5, 5, 2};
     public int[] expectedCountArray2 = {2, 3, 3, 4, 5, 5, 5, 8, 9};
+
+    public int[] randRadixArray = {912, 132, 399, 316, 591, 286, 243, 869};
+    public int[] expectedRadixArray = {132, 243, 286, 316, 399, 591, 869, 912};
 
     public int[] randArraySize5 = { 3, 1, 4, 2, 5, 0};
     public int[] randArraySize10 = { 5, 1, 10, 6, 4, 7, 2, 9, 3, 8 };
@@ -33,7 +35,7 @@ public class NonComparisonSortsTest {
     }
 
     @Test
-    public void testCountSortPractice(){
-        assertArrayEquals(expectedCountArray2, NonComparisonSorts.countSortPractice(randCountArray2));
+    public void testRadixSort(){
+        assertArrayEquals(expectedRadixArray, NonComparisonSorts.radixSort(randRadixArray));
     }
 }

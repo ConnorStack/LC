@@ -3,7 +3,6 @@ package me.practice.SortingTests;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.Test;
-
 import me.practice.Sorting.SortingScratchClass;
 
 public class SortingScratchClassTest {
@@ -11,7 +10,8 @@ public class SortingScratchClassTest {
     public int[] expectedArrSize10 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     public int[] randCountArrayRandomVariation = {0, 0, 4, 2, 4, 5, 2, 1, 0};
-    public int[] randCountArrayNoZeroVariation = { 9, 3, 8, 3, 5, 4, 5, 5, 2};    
+    public int[] randCountArrayNoZeroVariation = { 9, 3, 8, 3, 5, 4, 5, 5, 2};   
+
     public int[] expectedCountArrayRandomVariaton = {0, 0, 0, 1, 2, 2, 4, 4, 5};
     public int[] expectedCountArrayNoZeroVariation = {2, 3, 3, 4, 5, 5, 5, 8, 9};
 
@@ -49,5 +49,10 @@ public class SortingScratchClassTest {
     @Test
     public void testCountSortPracWithNoZeroVariation(){
         assertArrayEquals(expectedCountArrayNoZeroVariation, SortingScratchClass.countSortPrac(randCountArrayNoZeroVariation));
+    }
+
+    @Test
+    public void testCountSortPractice(){
+        assertArrayEquals(expectedCountArrayRandomVariaton, SortingScratchClass.countSortPractice(randCountArrayRandomVariation));
     }
 }
