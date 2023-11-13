@@ -32,8 +32,13 @@ public class SortingScratchClassTest {
     }
 
     @Test
-    public void testHeapSortPrac(){
+    public void testHeapSortPracWithSize10Input(){
         assertArrayEquals(expectedArrSize10, SortingScratchClass.heapSortPrac(randArraySize10));
+    }
+
+    @Test
+    public void testHeapSortPracWithSize5Input(){
+        assertArrayEquals(expectedArrSize5, SortingScratchClass.heapSortPrac(randArraySize5));
     }
 
     @Test
