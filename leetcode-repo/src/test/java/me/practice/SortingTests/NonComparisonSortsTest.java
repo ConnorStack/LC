@@ -24,19 +24,19 @@ public class NonComparisonSortsTest {
 
     @Test
     public void testBasicCountSort(){
-        int arr[] = NonComparisonSorts.basicCountSort(randArraySize5);
-        assertArrayEquals(expectedArrSize5, arr);
+        // int arr[] = NonComparisonSorts.basicCountSort(randArraySize5);
+        assertArrayEquals(expectedArrSize5, NonComparisonSorts.basicCountSort(randArraySize5));
     }
 
     @Test
     public void testExtendedCountSort(){
-        int arr[] = NonComparisonSorts.extendedCountSort(randArraySize5);
-        assertArrayEquals(expectedArrSize5, arr);
+        // int arr[] = NonComparisonSorts.extendedCountSort(randArraySize5);
+        assertArrayEquals(expectedArrSize5, NonComparisonSorts.extendedCountSort(randArraySize5));
     }
 
     @Test
     public void testCountSortPractice(){
-        int arr[] = NonComparisonSorts.countSortPractice(randCountArray2);
-        assertArrayEquals(expectedCountArray2, arr);
+        // int arr[] = NonComparisonSorts.countSortPractice(randCountArray2);
+        assertArrayEquals(expectedCountArray2, NonComparisonSorts.countSortPractice(randCountArray2));
     }
 }
