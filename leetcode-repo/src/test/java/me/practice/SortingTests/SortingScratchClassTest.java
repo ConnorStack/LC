@@ -23,8 +23,7 @@ public class SortingScratchClassTest {
     
     @Test
     public void testHeapSortPrac(){
-        int arr[] = SortingScratchClass.heapSortPrac(randArraySize10);
-        assertArrayEquals(expectedArrSize10, arr);
+        assertArrayEquals(expectedArrSize10, SortingScratchClass.heapSortPrac(randArraySize10));
     }
 
     @Test
