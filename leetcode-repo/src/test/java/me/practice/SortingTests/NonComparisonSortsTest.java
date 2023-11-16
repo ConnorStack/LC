@@ -42,7 +42,7 @@ public class NonComparisonSortsTest {
 
         @Test
     public void testExtendedCountSortWithRandomSize10(){
-        assertArrayEquals(expectedArrSize5, NonComparisonSorts.extendedCountSort(randArraySize5));
+        assertArrayEquals(expectedArrSize10, NonComparisonSorts.extendedCountSort(randArraySize10));
     }
 
     @Test
