@@ -3,8 +3,8 @@ package me.practice.Sorting;
 import java.util.Arrays;
 
 public class NonComparisonSorts {
-    
-    public static int[] basicCountSort(int[] arr){
+
+    public static int[] basicCountSort(int[] arr) {
         int[] sortedArr = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -13,7 +13,7 @@ public class NonComparisonSorts {
         return sortedArr;
     }
 
-    public static int[] extendedCountSort(int[] arr){
+    public static int[] extendedCountSort(int[] arr) {
         int K = Arrays.stream(arr).max().getAsInt();
         int[] counts = new int[K + 1];
         for (int elem : arr) {
@@ -45,19 +45,21 @@ public class NonComparisonSorts {
         return arr;
     }
 
-    public static int[] radixSort(int[] arr){
-        //find the maximum value of the array, this will gauge how many iterations will be necessary
+    public static int[] radixSort(int[] arr) {
+        // find the maximum value of the array, this will gauge how many iterations will
+        // be necessary
         int maxValue = Integer.MIN_VALUE;
-        for(int n : arr){
-            if(n > maxValue){
+        for (int n : arr) {
+            if (n > maxValue) {
                 maxValue = n;
             }
         }
 
-        //set place value = 1, 
-        //while the maximumvalue / placevalue quotient > 0, call countSort then multiply placevalue by 10
+        // set place value = 1,
+        // while the maximumvalue / placevalue quotient > 0, call countSort then
+        // multiply placevalue by 10
         int placeValue = 1;
-        while(maxValue / placeValue > 0){
+        while (maxValue / placeValue > 0) {
             radixCountSort(arr, placeValue);
             placeValue *= 10;
         }
@@ -65,12 +67,12 @@ public class NonComparisonSorts {
         return arr;
     }
 
-    private static void radixCountSort(int[] arr, int placeValue){
+    private static void radixCountSort(int[] arr, int placeValue) {
         final int DIGITS = 10;
         int[] counts = new int[DIGITS];
 
-        //For this placeValue bracket, determine counts of 0 - 9
-        for(int num : arr){
+        // For this placeValue bracket, determine counts of 0 - 9
+        for (int num : arr) {
             int current = num / placeValue;
             counts[current % DIGITS]++;
         }
@@ -83,15 +85,15 @@ public class NonComparisonSorts {
         }
 
         int[] sortedArr = new int[arr.length];
-        for(int elem : arr){
+        for (int elem : arr) {
             int current = elem / placeValue;
             sortedArr[counts[current % DIGITS]] = elem;
             counts[current % DIGITS]++;
         }
 
         for (int i = 0; i < sortedArr.length; i++) {
-            arr[i] = sortedArr[i];   
+            arr[i] = sortedArr[i];
         }
-        
+
     }
 }

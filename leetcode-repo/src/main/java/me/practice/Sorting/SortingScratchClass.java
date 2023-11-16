@@ -4,51 +4,50 @@ import java.util.Arrays;
 
 public class SortingScratchClass {
 
-    public static int[] insertionSortPrac(int[] arr){
+    public static int[] insertionSortPrac(int[] arr) {
         int temp, currentIndex;
 
         for (int i = 1; i < arr.length; i++) {
             currentIndex = i;
-            while(currentIndex > 0 && arr[currentIndex] < arr[currentIndex-1]){
+            while (currentIndex > 0 && arr[currentIndex] < arr[currentIndex - 1]) {
                 temp = arr[currentIndex];
-                arr[currentIndex] = arr[currentIndex-1];
-                arr[currentIndex-1] = temp;
+                arr[currentIndex] = arr[currentIndex - 1];
+                arr[currentIndex - 1] = temp;
                 currentIndex -= 1;
             }
         }
-        
+
         return arr;
     }
 
-    public static int[] heapSortPrac(int[] arr){
-        //first heapify the array in-place
-        for (int i = arr.length/2 - 1 ; i >= 0; i--) {
+    public static int[] heapSortPrac(int[] arr) {
+        // first heapify the array in-place
+        for (int i = arr.length / 2 - 1; i >= 0; i--) {
             maxHeapify(arr, arr.length, i);
         }
 
-        for (int i = arr.length-1; i > 0; i--) {
+        for (int i = arr.length - 1; i > 0; i--) {
             int temp = arr[i];
             arr[i] = arr[0];
             arr[0] = temp;
             maxHeapify(arr, i, 0);
         }
 
-
         return arr;
     }
 
-    private static void maxHeapify(int[] arr, int heapSize, int index){
+    private static void maxHeapify(int[] arr, int heapSize, int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
         int largest = index;
 
-        if(left < heapSize && arr[left] > arr[largest]){
+        if (left < heapSize && arr[left] > arr[largest]) {
             largest = left;
         }
-        if(right < heapSize && arr[right] > arr[largest]){
+        if (right < heapSize && arr[right] > arr[largest]) {
             largest = right;
         }
-        if(index != largest){
+        if (index != largest) {
             int temp = arr[largest];
             arr[largest] = arr[index];
             arr[index] = temp;
@@ -56,18 +55,18 @@ public class SortingScratchClass {
         }
     }
 
-    public static int[] countSortPrac(int[] unsortedArr){
+    public static int[] countSortPrac(int[] unsortedArr) {
         int[] sortedArr = new int[unsortedArr.length];
 
         int k = Arrays.stream(unsortedArr).max().getAsInt();
         int[] counts = new int[k + 1];
 
-        for(int n : unsortedArr){
+        for (int n : unsortedArr) {
             counts[n]++;
         }
 
         int accumulator = 0;
-        int[] startingIndicies = new int[k+1];
+        int[] startingIndicies = new int[k + 1];
         for (int i = 0; i < counts.length; i++) {
             startingIndicies[i] = accumulator;
             accumulator += counts[i];
@@ -81,30 +80,29 @@ public class SortingScratchClass {
 
             startingIndicies[unsortedValue]++;
         }
-        
+
         return sortedArr;
     }
 
-    public static int[] countSortPractice(int[] arr)
-    {
+    public static int[] countSortPractice(int[] arr) {
         int[] sortedArr = new int[arr.length];
         int k = Arrays.stream(arr).max().getAsInt();
 
         int[] counts = new int[k + 1];
         int[] startingIndex = new int[k + 1];
 
-        for(int element : arr){
-            counts[element]+= 1;
+        for (int element : arr) {
+            counts[element] += 1;
         }
 
         int accum = 0;
-        for(int i = 0; i < counts.length; i++){
+        for (int i = 0; i < counts.length; i++) {
             startingIndex[i] = accum;
             accum += counts[i];
         }
 
         for (int i = 0; i < sortedArr.length; i++) {
-            //{0, 0, 4, 2, 4, 5, 2, 1, 0};
+            // {0, 0, 4, 2, 4, 5, 2, 1, 0};
             int pulledValue = arr[i];
             int element = startingIndex[pulledValue];
             startingIndex[pulledValue]++;

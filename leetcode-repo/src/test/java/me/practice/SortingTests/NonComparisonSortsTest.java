@@ -26,7 +26,7 @@ public class NonComparisonSortsTest {
     public int[] nonIncreasingSize10 = {10, 9,8, 7, 6, 5, 4, 3, 2, 1};
 
     @Test
-    public void testBasicCountSort(){
+    public void testBasicCountSortWithRandomSize5(){
         assertArrayEquals(expectedArrSize5, NonComparisonSorts.basicCountSort(randArraySize5));
     }
 
