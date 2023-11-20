@@ -19,8 +19,10 @@ public class NonComparisonSortsTest {
     public int[] randRadixArray = { 912, 132, 399, 316, 591, 286, 243, 869 };
     public int[] expectedRadixArray = { 132, 243, 286, 316, 399, 591, 869, 912 };
 
-    public int[] randRadixArrayWithDuplicates = { 912, 132, 399, 316, 591, 286, 243, 869, 912, 132, 399, 316, 591, 286, 243, 869 };
-    public int[] expectedRadixArrayWithDuplicates = { 132, 132, 243, 243, 286, 286, 316, 316, 399, 399, 591, 591, 869, 869, 912, 912 };
+    public int[] randRadixArrayWithDuplicates = { 912, 132, 399, 316, 591, 286, 243, 869, 912, 132, 399, 316, 591, 286,
+            243, 869 };
+    public int[] expectedRadixArrayWithDuplicates = { 132, 132, 243, 243, 286, 286, 316, 316, 399, 399, 591, 591, 869,
+            869, 912, 912 };
 
     public int[] randArraySize5 = { 3, 1, 4, 2, 5, 0 };
     public int[] randArraySize10 = { 0, 5, 1, 6, 4, 7, 2, 9, 3, 8 };
@@ -53,7 +55,7 @@ public class NonComparisonSortsTest {
         assertArrayEquals(expectedRadixArray, NonComparisonSorts.radixSort(randRadixArray));
     }
 
-        @Test
+    @Test
     public void testRadixSortWithDuplicates() {
         assertArrayEquals(expectedRadixArrayWithDuplicates, NonComparisonSorts.radixSort(randRadixArrayWithDuplicates));
     }

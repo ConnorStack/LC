@@ -55,4 +55,19 @@ public class SortingScratchClassTest {
     public void testCountSortPractice(){
         assertArrayEquals(expectedCountArrayRandomVariaton, SortingScratchClass.countSortPractice(randCountArrayRandomVariation));
     }
+
+    @Test 
+    public void testInsertionSortPrac(){
+        assertArrayEquals(expectedArrSize5, SortingScratchClass.insertionSortPrac(randArraySize5));
+    }
+
+    @Test
+    public void testBubbleSortPrac(){
+        assertArrayEquals(expectedArrSize5, SortingScratchClass.bubbleSortPrac(randArraySize5));
+    }
+
+    @Test
+    public void testSelectSortPrac(){
+        assertArrayEquals(expectedArrSize5, SortingScratchClass.selectSortPrac(randArraySize5));
+    }
 }
