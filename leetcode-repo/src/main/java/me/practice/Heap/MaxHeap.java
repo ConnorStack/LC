@@ -32,10 +32,11 @@ public class MaxHeap {
         // If it is greater than the parent this breaks max heap rule
         // If index is 1, then there is only the 0th index
         // which is our dud value, and the root node. So dont loop
-        while (maxHeap[index] > maxHeap[parent] && index > 1) {
+        while (index > 1 && maxHeap[index] > maxHeap[parent]) {
             int temp = maxHeap[parent];
             maxHeap[parent] = maxHeap[index];
             maxHeap[index] = temp;
+            index = parent; // REVIEW THIS POINT. IT WAS MISSED
             parent = index / 2;
         }
     }
@@ -82,8 +83,12 @@ public class MaxHeap {
         }
     }
 
-    public int getHeapSize() {
+    public int getHeapRealSize() {
         return realSize;
+    }
+
+    public int getHeapSize() {
+        return heapSize;
     }
 
     public String toString() {

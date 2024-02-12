@@ -62,7 +62,40 @@ public class MaxHeapTest {
         int expectedPop = -1;
         int actualPop = maxHeap.pop();
         assertEquals(expectedPop, actualPop);
+    }
 
+    @Test
+    public void testMaxHeapPopOnOnce() {
+        maxHeap.clearHeap();
+        maxHeap.add(6);
+        int expectedPop = 6;
+        int actualPop = maxHeap.pop();
+        assertEquals(expectedPop, actualPop);
+    }
+
+    @Test
+    public void testMaxHeapPopOnFull() {
+        maxHeap.clearHeap();
+        for (int i = 1; i <= maxHeap.getHeapSize(); i++) {
+            maxHeap.add(i);
+        }
+
+        maxHeap.toString();
+        int expectedPop = 5;
+        int actualPop = maxHeap.pop();
+        assertEquals(expectedPop, actualPop);
+    }
+
+    @Test
+    public void testMaxHeapPopOnOverflow() {
+        maxHeap.clearHeap();
+        for (int i = 1; i <= maxHeap.getHeapSize(); i++) {
+            maxHeap.add(i);
+        }
+        maxHeap.add(10);
+        int expectedPop = 5;
+        int actualPop = maxHeap.pop();
+        assertEquals(expectedPop, actualPop);
     }
 
     @Test
@@ -107,7 +140,7 @@ public class MaxHeapTest {
         maxHeap.add(2);
         maxHeap.add(1);
         maxHeap.add(10);
-        int expectedPeekValue = 1;
+        int expectedPeekValue = 5;
         int actualPeekValue = maxHeap.peek();
 
         assertEquals(expectedPeekValue, actualPeekValue);
