@@ -94,15 +94,14 @@ public class ComparisonSorts {
 
     public static int[] heapSortPractice(int[] arr) {
 
-        for (int i = arr.length / 2 - 1; i >= 0; i--) {
+        for (int i = 0; i < arr.length; i++) {
             maxHeapifyPractice(arr, arr.length, i);
         }
-
-        for (int i = arr.length - 1; i >= 0; i--) {
+        for (int i = arr.length - 1; i > 0; i--) {
             int temp = arr[i];
             arr[i] = arr[0];
             arr[0] = temp;
-            maxHeapifyPractice(arr, i, 0);
+            maxHeapify(arr, i, 0);
         }
         return arr;
     }
@@ -110,20 +109,19 @@ public class ComparisonSorts {
     private static void maxHeapifyPractice(int[] arr, int heapSize, int index) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;
-        int largest = index;
+        int largestIndex = index;
 
-        if (left < heapSize && arr[left] > arr[largest]) {
-            largest = left;
+        if (left < heapSize && arr[left] > arr[largestIndex]) {
+            largestIndex = left;
         }
-        if (right < heapSize && arr[right] > arr[largest]) {
-            largest = right;
+        if (right < heapSize && arr[right] > arr[largestIndex]) {
+            largestIndex = right;
         }
-
-        if (largest != index) {
-            int temp = arr[largest];
-            arr[largest] = arr[index];
+        if (largestIndex != index) {
+            int temp = arr[largestIndex];
+            arr[largestIndex] = arr[index];
             arr[index] = temp;
-            maxHeapifyPractice(arr, heapSize, largest);
+            maxHeapify(arr, heapSize, largestIndex);
         }
     }
 }
