@@ -1,9 +1,9 @@
 package me.Graph;
 
-public class UnionFind {
+public class QuickFind {
     private int[] root;
 
-    public UnionFind(int size) {
+    public QuickFind(int size) {
         root = new int[size];
         for (int i = 0; i < root.length; i++) {
             root[i] = i;
@@ -25,6 +25,10 @@ public class UnionFind {
                 }
             }
         }
+    }
+
+    public boolean isConnected(int x, int y) {
+        return find(x) == find(y);
     }
 
 }
